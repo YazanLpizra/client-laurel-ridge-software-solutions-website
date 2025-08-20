@@ -1,0 +1,80 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import Landing from "@components/Landing.astro";
+import BlogFullArticle from "@components/BlogFullArticle.astro";
+import FeaturedPost from "@components/FeaturedPost.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import { getOptimizedImage } from "@utils/utils";
+import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+const optimizedImage = await getOptimizedImage(landingImage);
+
+export const getStaticPaths = (async () => {
+    const posts = await getCollection("blog");
+
+    return posts.map((post) => {
+        // Extract just the filename without directory for slug
+        const slug = post.id.replace(/.*\//, '').replace(/\.md$/, '');
+        
+        return {
+            params: {
+                slug: slug,
+            },
+            props: {
+                post,
+            },
+        };
+    });
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+---
+
+<BaseLayout
+    title="Blog"
+    description="Meta description for the page"
+    preloadedImage={optimizedImage}
+>
+    <Landing title="Blog" image={optimizedImage} />
+
+    <section class="main-content-wrapper">
+        <!--Main content -->
+        <div class="main-content">
+            <BlogFullArticle post={post} />
+        </div>
+        <FeaturedPost post={post} />
+    </section>
+</BaseLayout>
+
+<style lang="scss">
+    /* Mobile - 360px */
+    @media only screen and (min-width: 0em) {
+        .main-content-wrapper {
+            padding: var(--sectionPadding);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: calc(50 / 16 * 1em);
+        }
+
+        .main-content {
+            // width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: calc(50 / 16 * 1em);
+        }
+    }
+
+    /* Tablet - 1024px */
+    @media only screen and (min-width: 64em) {
+        .main-content-wrapper {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    }
+</style>

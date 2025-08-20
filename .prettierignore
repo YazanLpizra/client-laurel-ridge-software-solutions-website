@@ -1,0 +1,6 @@
+.astro
+.claude
+.netlify
+.vscode
+dist
+node_modules

@@ -1,0 +1,131 @@
+#markdown-content {
+    margin-top: 1em;
+    padding-top: 1.5625em;
+    border-top: 1px solid #ebebeb;
+
+    h1 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        line-height: 1.75em;
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        line-height: 1.5em;
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.5em;
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.5em;
+        margin-bottom: 1rem;
+        color: var(--headerColor);
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6em;
+        margin: 0;
+        margin-bottom: 1rem;
+        color: var(--bodyTextColor);
+    }
+
+    a {
+        font-size: inherit;
+        text-decoration: underline;
+        color: var(--secondary);
+    }
+
+    ul,
+    ol {
+        margin: 0;
+        margin: 1rem 0;
+        padding-left: 2.5rem;
+
+        li {
+            font-size: 1rem;
+            line-height: 1.6em;
+            list-style: circle;
+            margin-bottom: 1rem;
+            color: var(--bodyTextColor);
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        margin: 1rem 0;
+        border-radius: 0.5rem;
+        display: block;
+    }
+}
+
+/* Dark Mode */
+body.dark-mode {
+    .recent-articles {
+        .blog-h1,
+        .blog-desc,
+        .blog-author,
+        .blog-date {
+            color: #f7f7f7;
+        }
+    }
+
+    .blog-sidebar {
+        .feature-h3,
+        .feature-date,
+        .blog-header {
+            color: #f7f7f7;
+        }
+
+        .blog-header {
+            &:after {
+                background: var(--primary);
+            }
+        }
+    }
+
+    .blog-article {
+        .blog-h1,
+        .blog-author,
+        .blog-date {
+            color: #f7f7f7;
+        }
+
+        #markdown-content {
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: var(--light);
+            }
+
+            p,
+            li {
+                color: var(--light);
+                opacity: 0.8;
+            }
+
+            a {
+                color: var(--primary);
+            }
+        }
+    }
+}
