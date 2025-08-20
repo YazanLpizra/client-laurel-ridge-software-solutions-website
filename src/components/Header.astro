@@ -1,10 +1,12 @@
 ---
-import navData from "@data/navData";
+import { navData } from "@data/navData";
 import { Icon } from "astro-icon/components";
 import Settings from "./TemplateComponents/Settings.astro";
 ---
 
-<!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
+<!-- ============================================ 
+                 Navigation                   
+============================================ -->
 <header id="cs-navigation">
     <div class="cs-container">
         <!--Nav Logo-->
@@ -65,7 +67,7 @@ import Settings from "./TemplateComponents/Settings.astro";
                                             },
                                         ]}
                                     >
-                                        {entry.key === "home" ? "Home" : entry.key === "about" ? "About" : entry.key === "projects" ? "Projects" : entry.key === "blog" ? "Blog" : entry.key === "contact" ? "Contact" : entry.key}
+                                        {entry.name}
                                         <Icon
                                             name="mdi--caret"
                                             class="cs-drop-icon"
@@ -84,13 +86,12 @@ import Settings from "./TemplateComponents/Settings.astro";
                                             },
                                         ]}
                                         aria-current={
-                                            Astro.url.pathname ===
-                                            entry.url
+                                            Astro.url.pathname === entry.url
                                                 ? "page"
                                                 : undefined
                                         }
                                     >
-                                        {entry.key === "home" ? "Home" : entry.key === "about" ? "About" : entry.key === "projects" ? "Projects" : entry.key === "blog" ? "Blog" : entry.key === "contact" ? "Contact" : entry.key}
+                                        {entry.name}
                                     </a>
                                 )}
 
@@ -112,7 +113,7 @@ import Settings from "./TemplateComponents/Settings.astro";
                                                             : undefined
                                                     }
                                                 >
-                                                    {child.key === "project-1" ? "Project 1" : child.key === "project-2" ? "Project 2" : child.key}
+                                                    {child.name}
                                                 </a>
                                             </li>
                                         ))}
@@ -333,8 +334,8 @@ import Settings from "./TemplateComponents/Settings.astro";
                     transform 0.4s,
                     opacity 0.3s;
                 transform-origin: top right;
-                padding: calc(48 / 16 * 1rem) clamp(1.75rem, 3vw, 2.5rem) calc(32 / 16 * 1rem)
-                    calc(70 / 16 * 1rem);
+                padding: calc(48 / 16 * 1rem) clamp(1.75rem, 3vw, 2.5rem)
+                    calc(32 / 16 * 1rem) calc(70 / 16 * 1rem);
                 display: grid;
                 gap: clamp(1.25rem, 2.6vw, 2.25rem);
             }
@@ -518,7 +519,6 @@ import Settings from "./TemplateComponents/Settings.astro";
                 margin: 0;
                 box-sizing: border-box;
                 padding: 0 calc(24 / 16 * 1rem) 0 calc(24 / 16 * 1rem);
-                background-color: var(--primary);
                 opacity: 0;
                 display: flex;
                 visibility: hidden;
@@ -842,7 +842,6 @@ import Settings from "./TemplateComponents/Settings.astro";
                     content: "";
                     width: 0%;
                     height: 2px;
-                    background: var(--primary);
                     opacity: 1;
                     display: block;
                     position: absolute;
@@ -892,12 +891,6 @@ import Settings from "./TemplateComponents/Settings.astro";
 
                 .cs-li-link {
                     color: var(--bodyTextColorWhite);
-                }
-
-                .cs-li-link {
-                    &:before {
-                        background-color: var(--primaryLight);
-                    }
                 }
             }
         }

@@ -1,12 +1,15 @@
 ---
 import client from "@data/client.json";
-import navData from "@data/navData";
+import { navData } from "@data/navData";
 import { getCurrentYear } from "@utils/utils";
 
 const currentYear = getCurrentYear();
+const companyName = "Laurel Ridge Software Solutions LLC";
 ---
 
-<!-- ============================================ --><!--                   Footer                     --><!-- ============================================ -->
+<!-- ============================================ 
+                Footer                     
+============================================ -->
 <footer id="footer">
     <div class="container">
         <section class="left-section">
@@ -20,9 +23,6 @@ const currentYear = getCurrentYear();
                     height="78"
                 />
             </a>
-            <p>
-                Extra content if you need it, if not you can delete this whole p tag. I usually do.
-            </p>
         </section>
         <section class="right-section">
             <div class="lists">
@@ -32,25 +32,26 @@ const currentYear = getCurrentYear();
                     </li>
                     <!-- Note: `:any` is solely used to stop the TypeScript warnings. It's an upstream issue with the i18n package which does not impact the code. -->
                     {
-                        navData.map((entry: any) => (
-                            <li>
-                                {entry.url && (
-                                    <a href={entry.url}>
-                                        {entry.key === "home" ? "Home" : entry.key === "about" ? "About" : entry.key === "projects" ? "Projects" : entry.key === "blog" ? "Blog" : entry.key === "contact" ? "Contact" : entry.key}
-                                    </a>
-                                )}
-                            </li>
-                        ))
+                        navData
+                            .filter((entry: any) => entry.category === "info")
+                            .map((entry: any) => (
+                                <li>
+                                    {entry.url && (
+                                        <a href={entry.url}>{entry.name}</a>
+                                    )}
+                                </li>
+                            ))
                     }
                 </ul>
                 <ul>
                     <li>
                         <h2>Services</h2>
                     </li>
-                    <li>Service1</li>
-                    <li>Service2</li>
-                    <li>Service4</li>
-                    <li>Service5</li>
+                    {
+                        navData
+                            .find((item) => item.name === "Services")!
+                            .children.map(({ name }) => <li>{name}</li>)
+                    }
                 </ul>
                 <ul>
                     <li>
@@ -72,9 +73,7 @@ const currentYear = getCurrentYear();
                         </a>
                     </li>
                     <li>
-                        <a href={`mailto:${client.email}`}
-                            >Click to email</a
-                        >
+                        <a href={`mailto:${client.email}`}>Click to email</a>
                     </li>
                 </ul>
             </div>
@@ -83,9 +82,7 @@ const currentYear = getCurrentYear();
 
     <section class="credit">
         <span>Designed and Hand Coded by </span>
-        <a href="/" target="_blank" rel="noopener"
-            >Your Company Name</a
-        >
+        <a href="/" target="_blank" rel="noopener">{companyName}</a>
         <span class="copyright"> Copyright {currentYear}</span>
     </section>
 </footer>
