@@ -1,25 +1,13 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import CTA from "@components/CTA.astro";
-import Landing from "@components/Landing.astro";
+import CTA from "@components/common/CTA.astro";
+import InteriorPageLayout from "@layouts/InteriorPageLayout.astro";
 
-// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
-import { getOptimizedImage } from "@utils/utils";
-import landingImage from "@assets/images/landing.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-const optimizedImage = await getOptimizedImage(landingImage);
 ---
 
-<BaseLayout
+<InteriorPageLayout
     title="About"
     description="Meta description for the page"
-    preloadedImage={optimizedImage}
 >
-    <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
-
-    <Landing title="About" image={optimizedImage} />
-
     <!-- ============================================ -->
     <!--                 Side By Side                 -->
     <!-- ============================================ -->
@@ -97,7 +85,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
         </div>
     </section>
     <CTA />
-</BaseLayout>
+</InteriorPageLayout>
 
 <style lang="scss">
     /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */

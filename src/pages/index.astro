@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import CTA from "@components/CTA.astro";
+import CTA from "@components/common/CTA.astro";
 import { getOptimizedImage } from "@utils/utils";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Hero (for rendering)
@@ -8,6 +8,7 @@ import landingImage from "@assets/images/hero.jpg"; // <-- THE PATH TO THE ASSET
 import mobileLandingImage from "@assets/images/hero-m.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedLandingImage = await getOptimizedImage(landingImage);
 const optimizedMobileLandingImage = await getOptimizedImage(mobileLandingImage);
+
 ---
 
 <BaseLayout
