@@ -1,13 +1,9 @@
 ---
 import client from "@data/client.json";
 import InteriorPageLayout from "@layouts/InteriorPageLayout.astro";
-
 ---
 
-<InteriorPageLayout
-    title="Contact"
-    description="Meta description for the page"
->
+<InteriorPageLayout title="Contact" description="Meta description for the page">
     <!-- ============================================ -->
     <!--                Contact Form                  -->
     <!-- ============================================ -->
@@ -19,7 +15,10 @@ import InteriorPageLayout from "@layouts/InteriorPageLayout.astro";
                     <span class="cs-topper">Contact</span>
                     <h2 class="cs-title">Get in touch</h2>
                     <p class="cs-text">
-                        Tell us Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.
+                        Tell us Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Ridiculus elementum ullamcorper ipsum
+                        porttitor aliquam. Id magna urna ultrices odio pulvinar.
+                        Sed ut.
                     </p>
                 </div>
                 <label>
@@ -67,8 +66,7 @@ import InteriorPageLayout from "@layouts/InteriorPageLayout.astro";
                         required
                         name="Message"
                         id="message"
-                        placeholder="I'd be interested in..."
-                    ></textarea>
+                        placeholder="I'd be interested in..."></textarea>
                 </label>
                 <button class="cs-button-solid" type="submit"
                     >Submit message</button
@@ -118,7 +116,7 @@ import InteriorPageLayout from "@layouts/InteriorPageLayout.astro";
             </div>
         </div>
     </section>
-</BaseLayout>
+</InteriorPageLayout>
 
 <style lang="scss">
     /* PAGE-SPECIFIC STYLES FOR THE CONTACT PAGE */

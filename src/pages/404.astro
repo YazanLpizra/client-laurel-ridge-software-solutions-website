@@ -12,9 +12,7 @@ const optimizedImage = await getOptimizedImage(landingImage);
 <BaseLayout title={title} description={title} preloadedImage={optimizedImage}>
     <section id="int-hero">
         <h1>{title}</h1>
-        <a href="/" class="cs-button-solid"
-            >Back to homepage</a
-        >
+        <a href="/" class="cs-button-solid">Back to homepage</a>
         <Picture
             src={landingImage}
             formats={["avif", "webp"]}

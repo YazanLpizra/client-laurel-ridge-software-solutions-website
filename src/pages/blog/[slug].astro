@@ -16,8 +16,8 @@ export const getStaticPaths = (async () => {
 
     return posts.map((post) => {
         // Extract just the filename without directory for slug
-        const slug = post.id.replace(/.*\//, '').replace(/\.md$/, '');
-        
+        const slug = post.id.replace(/.*\//, "").replace(/\.md$/, "");
+
         return {
             params: {
                 slug: slug,

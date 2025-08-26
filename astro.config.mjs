@@ -3,6 +3,6 @@ import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-    site: "https://www.yourwebsite.com", // update me!
+    site: "https://www.laurelridgesoftwaresolutions.com",
     integrations: [icon(), sitemap()],
 });
