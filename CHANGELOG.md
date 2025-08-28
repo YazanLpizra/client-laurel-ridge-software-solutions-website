@@ -171,7 +171,7 @@ Refer to [Astro's documentation on Pagination](https://docs.astro.build/en/guide
             }
             ```
 
-            > 📢 `CTRL+SHIFT+F` and check for any traces of `.slug`. There shouldn’t be any more.
+            > 📢 `CTRL+SHIFT+F` and check for any traces of `.slug`. There shouldn't be any more.
 
 
         4. **Switch to the new `render()` function**. Entries no longer have a `render()` method. Instead, import the `render()` function from `astro:content`.
@@ -195,12 +195,12 @@ Refer to [Astro's documentation on Pagination](https://docs.astro.build/en/guide
 
 4.  **Breaking change: TypeScript configuration**
     <br> 📢 Reference: https://docs.astro.build/en/guides/upgrade-to/v5/#changed-typescript-configuration 1. Add the following `include` and `exclude` properties to your existing `tsconfig.json`:
-        ```
-        {
-          "extends": "astro/tsconfigs/base",
-          "include": [".astro/types.d.ts", "**/*"],
-          "exclude": ["dist"]
-        }
+    ```
+    {
+    "extends": "astro/tsconfigs/base",
+    "include": [".astro/types.d.ts", "**/*"],
+    "exclude": ["dist"]
+    }
 
         ```
 

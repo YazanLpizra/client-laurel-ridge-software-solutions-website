@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="200"
+   height="50"
+   viewBox="0 0 52.916666 13.229167"
+   version="1.1"
+   id="svg108"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="logo-white2.svg">
+  <defs
+     id="defs102">
+    <linearGradient
+       id="a"
+       x1="0"
+       x2="1"
+       y1="0"
+       y2="0"
+       gradientTransform="matrix(-319.94762,84.324752,-84.324752,-319.94762,447.68994,338.45768)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         style="stop-color:black;stop-opacity:1"
+         id="stop53" />
+      <stop
+         offset="1"
+         style="stop-color:black;stop-opacity:0"
+         id="stop55" />
+    </linearGradient>
+    <linearGradient
+       id="b"
+       x1="0"
+       x2="1"
+       y1="0"
+       y2="0"
+       gradientTransform="matrix(111.00896,-302.64226,302.64226,111.00896,60.790631,414.43502)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         style="stop-color:black;stop-opacity:1"
+         id="stop58" />
+      <stop
+         offset="1"
+         style="stop-color:black;stop-opacity:0"
+         id="stop60" />
+    </linearGradient>
+    <linearGradient
+       id="c"
+       x1="0"
+       x2="1"
+       y1="0"
+       y2="0"
+       gradientTransform="matrix(204.68279,261.73711,-261.73711,204.68279,171.72203,73.016573)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         style="stop-color:black;stop-opacity:1"
+         id="stop63" />
+      <stop
+         offset="1"
+         style="stop-color:black;stop-opacity:0"
+         id="stop65" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="132.01997"
+     inkscape:cy="106.8239"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:lockguides="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     objecttolerance="20" />
+  <metadata
+     id="metadata105">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g79"
+       transform="matrix(0.08819645,0,0,0.08819645,-8.308321,0.16606529)"
+       style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2">
+      <path
+         d="m 301.094,89.774 4.082,-7.102 a 25,25 0 0 1 43.347,-0.002 l 166.809,290.105 -293.689,-0.156 20.218,-34.967 h 205.916 z"
+         style="fill:url(#a)"
+         transform="matrix(0.42536,0,0,0.42536,40.971,-29.826)"
+         id="path47" />
+      <path
+         d="m 361.69,426.971 a 25,25 0 0 1 -21.673,37.462 l -339.739,0.001 148.92,-261.74 16.929,29.179 -105.315,182.383 293.668,0.177 z"
+         style="fill:url(#b)"
+         transform="matrix(0.42536,0,0,0.42536,109.392,-47.55)"
+         id="path49" />
+      <path
+         d="M 14.174,334.798 A 25,25 0 0 1 -7.498,297.336 L 162.44,1.802 309.122,249.686 273.847,249.68 171.397,73.058 22.478,334.798 Z"
+         style="fill:url(#c)"
+         id="path51"
+         transform="matrix(0.42536,0,0,0.42536,99.952,7.588)" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.79815px;line-height:1;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.136124"
+       x="15.599453"
+       y="3.9175248"
+       id="text142-6"
+       transform="scale(1.0462349,0.95580832)"><tspan
+         sodipodi:role="line"
+         id="tspan140-3"
+         x="15.599453"
+         y="3.9175248"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.79815px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';stroke-width:0.136124">Laurel Ridge</tspan><tspan
+         sodipodi:role="line"
+         x="15.599453"
+         y="8.7156754"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.79815px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';stroke-width:0.136124"
+         id="tspan164">Software </tspan><tspan
+         sodipodi:role="line"
+         x="15.599453"
+         y="13.513824"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.79815px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';stroke-width:0.136124"
+         id="tspan162">Solutions</tspan></text>
+  </g>
+</svg>

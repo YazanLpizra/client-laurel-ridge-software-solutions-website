@@ -2,10 +2,18 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import CTA from "@components/common/CTA.astro";
 import { getOptimizedImage } from "@utils/utils";
+import {
+    Offerings,
+    Pricing,
+    Services,
+    ValueProp,
+    PageRanking,
+} from "@components/pages/home";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Hero (for rendering)
 import landingImage from "@assets/images/hero.webp"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import mobileLandingImage from "@assets/images/hero-m.webp"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import heroVideo from "@assets/hero-video.mp4";
 const optimizedLandingImage = await getOptimizedImage(landingImage);
 const optimizedMobileLandingImage = await getOptimizedImage(mobileLandingImage);
 ---
@@ -18,1592 +26,263 @@ const optimizedMobileLandingImage = await getOptimizedImage(mobileLandingImage);
     <!-- ============================================ -->
     <!--                    Hero                      -->
     <!-- ============================================ -->
-
-    <section id="hero">
+    <section id="hero-2436">
         <div class="cs-container">
-            <div class="cs-flex-group">
-                <span class="cs-topper"
-                    >Your Digital Transformation Partner</span
-                >
-                <h1 class="cs-title">
-                    Hand-Coded Websites That
-                    <br />
-                    Dominate Google Rankings
-                </h1>
-                <p class="cs-text">
-                    No WordPress. No page builders. 100% custom hand-coded
-                    websites with enterprise-grade security and blazing-fast
-                    performance. Plus business automation that eliminates 80% of
-                    manual tasks.
-                </p>
-                <p class="cs-text cs-caution">
-                    Small business technology. Enterprise-level results.
-                </p>
-                <a href="/contact" class="cs-button-solid">Start Your Project</a
-                >
-                <a href="/projects" class="cs-button-transparent">
-                    <img
-                        class="cs-img"
-                        loading="lazy"
-                        decoding="async"
-                        src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
-                        alt="play icon"
-                        width="17"
-                        height="17"
-                    />
-                    View Our Work
-                </a>
-            </div>
-        </div>
-
-        <!-- Background Image -->
-        <!-- We can't use Astro <Picture /> as it does not support multiple sources -->
-        <picture class="cs-picture">
-            <source
-                media="(max-width: 600px)"
-                srcset={optimizedMobileLandingImage.src}
-            />
-            <source
-                media="(min-width: 601px)"
-                srcset={optimizedLandingImage.src}
-            />
-            <img
-                aria-hidden="true"
-                src={optimizedLandingImage.src}
-                width={optimizedLandingImage.attributes.width}
-                height={optimizedLandingImage.attributes.height}
-                loading="eager"
-                alt=""
-            />
-        </picture>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                  Services                    -->
-    <!-- ============================================ -->
-
-    <section id="services" class="services">
-        <div class="card">
-            <picture>
-                <img
-                    aria-hidden="true"
-                    decoding="async"
-                    src="/assets/svgs/service1.svg"
-                    alt="website development"
-                    width="48"
-                    height="48"
-                />
-            </picture>
-            <h2>100% Hand-Coded Websites</h2>
-            <p>
-                Zero WordPress vulnerabilities. Lightning-fast page speeds.
-                Superior Google rankings through clean, optimized code that
-                search engines love.
-            </p>
-        </div>
-        <div class="card">
-            <picture>
-                <img
-                    aria-hidden="true"
-                    decoding="async"
-                    src="/assets/svgs/service2.svg"
-                    alt="business automation"
-                    width="48"
-                    height="48"
-                />
-            </picture>
-            <h2>Enterprise-Grade Security</h2>
-            <p>
-                Bank-level security standards. Zero plugin vulnerabilities.
-                Complete control over every line of code ensures your site stays
-                secure and performs flawlessly.
-            </p>
-        </div>
-        <div class="card">
-            <picture>
-                <img
-                    aria-hidden="true"
-                    decoding="async"
-                    src="/assets/svgs/service3.svg"
-                    alt="e-commerce solutions"
-                    width="48"
-                    height="48"
-                />
-            </picture>
-            <h2>Business Automation Solutions</h2>
-            <p>
-                Custom workflows that eliminate 80% of manual tasks. From
-                automated invoicing to customer management - save hours daily
-                while reducing errors and operational costs.
-            </p>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                 Side By Side                 -->
-    <!-- ============================================ -->
-
-    <section id="sbs">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source
-                        media="(max-width: 600px)"
-                        srcset="/assets/images/cabinets2-m.jpg"
-                    />
-                    <source
-                        media="(min-width: 601px)"
-                        srcset="/assets/images/cabinets2.jpg"
-                    />
-                    <img
-                        aria-hidden="true"
-                        decoding="async"
-                        src="/assets/images/cabinets2.jpg"
-                        alt="cabinets"
-                        loading="lazy"
-                        width="400"
-                        height="563"
-                    />
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source
-                        media="(max-width: 600px)"
-                        srcset="/assets/images/construction-m.jpg"
-                    />
-                    <source
-                        media="(min-width: 601px)"
-                        srcset="/assets/images/construction.jpg"
-                    />
-                    <img
-                        aria-hidden="true"
-                        decoding="async"
-                        src="/assets/images/construction.jpg"
-                        alt="house"
-                        loading="lazy"
-                        width="400"
-                        height="563"
-                    />
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">Your Strategic Technology Partner</span>
-                <h2 class="cs-title">
-                    Why Hand-Coded Beats WordPress Every Time
-                </h2>
-                <p class="cs-text">
-                    WordPress sites are slow, vulnerable, and limited. Our 100%
-                    hand-coded approach delivers enterprise-grade security,
-                    blazing-fast performance, and complete design control. No
-                    plugins, no vulnerabilities, no compromises - just superior
-                    websites that dominate search rankings.
-                </p>
-                <p class="cs-text">
-                    We're not just developers - we're your strategic partner in
-                    digital transformation. Every line of code follows
-                    enterprise security standards, ensuring your website
-                    performs like a Fortune 500 company while fitting your small
-                    business budget.
-                </p>
-                <div class="cs-flex-group">
-                    <p class="cs-flex-p">
-                        "Every website we build follows the same security and
-                        performance standards used by Fortune 500 companies -
-                        but at small business prices."
+            <div class="cs-content">
+                <div class="cs-flex cs-flex1">
+                    <span class="cs-topper">Enterprise-Grade Solutions</span>
+                    <h2 class="cs-title">
+                        Hand-Coded Websites & Business Automation
+                    </h2>
+                </div>
+                <div class="cs-flex cs-flex2">
+                    <p class="cs-text">
+                        100% custom hand-coded websites that outperform
+                        WordPress sites. Enterprise-grade security and
+                        performance standards for small and medium businesses.
+                        Transform operations with automation that saves 80% of
+                        manual work.
                     </p>
-                    <span class="cs-name">Laurel Ridge Solutions</span>
-                    <span class="cs-job">Enterprise-Grade Development</span>
-                    <img
-                        class="cs-quote-icon"
-                        loading="lazy"
-                        decoding="async"
-                        src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
-                        alt="gavel"
-                        width="136"
-                        height="77"
-                    />
-                </div>
-                <a href="/about" class="cs-button-solid">Learn More About Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--            Extra Content To Rank             -->
-    <!-- ============================================ -->
-
-    <section id="sbs-r">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source
-                        media="(max-width: 600px)"
-                        srcset="/assets/images/construction-m.jpg"
-                    />
-                    <source
-                        media="(min-width: 601px)"
-                        srcset="/assets/images/construction.jpg"
-                    />
-                    <img
-                        aria-hidden="true"
-                        decoding="async"
-                        src="/assets/images/construction.jpg"
-                        alt="house"
-                        loading="lazy"
-                        width="400"
-                        height="560"
-                    />
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source
-                        media="(max-width: 600px)"
-                        srcset="/assets/images/cabinets2-m.jpg"
-                    />
-                    <source
-                        media="(min-width: 601px)"
-                        srcset="/assets/images/cabinets2.jpg"
-                    />
-                    <img
-                        aria-hidden="true"
-                        decoding="async"
-                        src="/assets/images/cabinets2.jpg"
-                        alt="cabinets"
-                        loading="lazy"
-                        width="400"
-                        height="560"
-                    />
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">Proven ROI & Time Savings</span>
-                <h2 class="cs-title">Eliminate 80% of Manual Tasks</h2>
-                <p class="cs-text">
-                    Stop wasting hours on repetitive work. Our custom automation
-                    solutions deliver immediate ROI by transforming
-                    time-consuming manual processes into seamless automated
-                    workflows. Typical clients save 15-20 hours per week within
-                    the first month.
-                </p>
-                <p class="cs-text">
-                    From automated invoicing that processes payments while you
-                    sleep to inventory systems that reorder stock automatically
-                    - we build solutions that work 24/7 so you don't have to.
-                    Turn repetitive work into competitive advantage.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                   Gallery                    -->
-    <!-- ============================================ -->
-
-    <section id="gallery">
-        <div class="cs-container">
-            <span class="cs-topper">Our Portfolio</span>
-            <h2 class="cs-title">Recent Projects & Success Stories</h2>
-            <div class="cs-image-group">
-                <!-- Row 1-->
-                <div class="cs-row cs-row-1">
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                    <picture class="cs-picture cs-picture1">
-                        <source
-                            media="(max-width: 600px)"
-                            srcset="/assets/images/portfolio/port1-m.jpg"
-                        />
-                        <source
-                            media="(min-width: 601px)"
-                            srcset="/assets/images/portfolio/port1.jpg"
-                        />
-                        <img
-                            aria-hidden="true"
-                            decoding="async"
-                            src="/assets/images/portfolio/port1.jpg"
-                            alt="e-commerce website project"
-                            loading="lazy"
-                            width="400"
-                            height="560"
-                        />
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source
-                            media="(max-width: 600px)"
-                            srcset="/assets/images/portfolio/port4-m.jpg"
-                        />
-                        <source
-                            media="(min-width: 601px)"
-                            srcset="/assets/images/portfolio/port4.jpg"
-                        />
-                        <img
-                            aria-hidden="true"
-                            decoding="async"
-                            src="/assets/images/portfolio/port4.jpg"
-                            alt="business automation dashboard"
-                            loading="lazy"
-                            width="400"
-                            height="560"
-                        />
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source
-                            media="(max-width: 600px)"
-                            srcset="/assets/images/portfolio/port7-m.jpg"
-                        />
-                        <source
-                            media="(min-width: 601px)"
-                            srcset="/assets/images/portfolio/port7.jpg"
-                        />
-                        <img
-                            aria-hidden="true"
-                            decoding="async"
-                            src="/assets/images/portfolio/port7.jpg"
-                            alt="custom web application"
-                            loading="lazy"
-                            width="400"
-                            height="560"
-                        />
-                    </picture>
-                </div>
-                <!-- Row 2 -->
-                <div class="cs-row cs-row-2">
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                    <picture class="cs-picture cs-picture1">
-                        <source
-                            media="(max-width: 600px)"
-                            srcset="/assets/images/portfolio/port2-m.jpg"
-                        />
-                        <source
-                            media="(min-width: 601px)"
-                            srcset="/assets/images/portfolio/port2.jpg"
-                        />
-                        <img
-                            aria-hidden="true"
-                            decoding="async"
-                            src="/assets/images/portfolio/port2.jpg"
-                            alt="restaurant ordering system"
-                            loading="lazy"
-                            width="400"
-                            height="560"
-                        />
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source
-                            media="(max-width: 600px)"
-                            srcset="/assets/images/portfolio/port5-m.jpg"
-                        />
-                        <source
-                            media="(min-width: 601px)"
-                            srcset="/assets/images/portfolio/port5.jpg"
-                        />
-                        <img
-                            aria-hidden="true"
-                            decoding="async"
-                            src="/assets/images/portfolio/port5.jpg"
-                            alt="inventory management system"
-                            loading="lazy"
-                            width="400"
-                            height="560"
-                        />
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source
-                            media="(max-width: 600px)"
-                            srcset="/assets/images/portfolio/port8-m.jpg"
-                        />
-                        <source
-                            media="(min-width: 601px)"
-                            srcset="/assets/images/portfolio/port8.jpg"
-                        />
-                        <img
-                            aria-hidden="true"
-                            decoding="async"
-                            src="/assets/images/portfolio/port8.jpg"
-                            alt="customer portal interface"
-                            loading="lazy"
-                            width="400"
-                            height="560"
-                        />
-                    </picture>
-                </div>
-                <!-- Row 3 -->
-                <div class="cs-row cs-row-3">
-                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-                    <picture class="cs-picture cs-picture1">
-                        <source
-                            media="(max-width: 600px)"
-                            srcset="/assets/images/portfolio/port3-m.jpg"
-                        />
-                        <source
-                            media="(min-width: 601px)"
-                            srcset="/assets/images/portfolio/port3.jpg"
-                        />
-                        <img
-                            aria-hidden="true"
-                            decoding="async"
-                            src="/assets/images/portfolio/port3.jpg"
-                            alt="mobile-responsive website"
-                            loading="lazy"
-                            width="400"
-                            height="560"
-                        />
-                    </picture>
-                    <picture class="cs-picture cs-picture2">
-                        <source
-                            media="(max-width: 600px)"
-                            srcset="/assets/images/portfolio/port6-m.jpg"
-                        />
-                        <source
-                            media="(min-width: 601px)"
-                            srcset="/assets/images/portfolio/port6.jpg"
-                        />
-                        <img
-                            aria-hidden="true"
-                            decoding="async"
-                            src="/assets/images/portfolio/port6.jpg"
-                            alt="workflow automation system"
-                            loading="lazy"
-                            width="400"
-                            height="560"
-                        />
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source
-                            media="(max-width: 600px)"
-                            srcset="/assets/images/portfolio/port9-m.jpg"
-                        />
-                        <source
-                            media="(min-width: 601px)"
-                            srcset="/assets/images/portfolio/port9.jpg"
-                        />
-                        <img
-                            aria-hidden="true"
-                            decoding="async"
-                            src="/assets/images/portfolio/port9.jpg"
-                            alt="customer portal interface"
-                            loading="lazy"
-                            width="400"
-                            height="560"
-                        />
-                    </picture>
+                    <a href="" class="cs-button-solid">Book A Call</a>
                 </div>
             </div>
+            <!-- Logo will be added when available -->
         </div>
+        <video class="cs-background" autoplay muted loop playsinline>
+            <source src={heroVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
     </section>
 
-    <!-- ============================================ -->
-    <!--                   Reviews                    -->
-    <!-- ============================================ -->
-
-    <section id="reviews">
-        <div class="cs-container">
-            <span class="cs-topper">Proven Results</span>
-            <h2 class="cs-title">Real Performance. Real Security. Real ROI.</h2>
-            <p class="cs-text">
-                Our hand-coded websites consistently outperform WordPress sites
-                in speed, security, and search rankings. Here's what happens
-                when you choose enterprise-grade development over cookie-cutter
-                solutions.
-            </p>
-            <ul class="cs-card-group">
-                <!-- Review 1 -->
-                <li class="cs-item">
-                    <img
-                        class="cs-item-img"
-                        aria-hidden="true"
-                        loading="lazy"
-                        decoding="async"
-                        src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png"
-                        alt="profile picture"
-                        width="80"
-                        height="80"
-                    />
-                    <p class="cs-item-p">
-                        "Our hand-coded site loads 4x faster than our old
-                        WordPress site. We jumped from page 3 to position 1 on
-                        Google for our main keywords. The automation saves us 20
-                        hours per week."
-                    </p>
-                    <span class="cs-reviewer">
-                        Sarah Mitchell
-                        <span class="cs-desc">Owner, Mountain View Crafts</span>
-                    </span>
-                    <img
-                        class="cs-item-stars"
-                        aria-hidden="true"
-                        loading="lazy"
-                        decoding="async"
-                        src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
-                        alt="stars"
-                        width="96"
-                        height="16"
-                    />
-                </li>
-                <!-- Review 2 -->
-                <li class="cs-item">
-                    <img
-                        class="cs-item-img"
-                        aria-hidden="true"
-                        loading="lazy"
-                        decoding="async"
-                        src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
-                        alt="profile picture"
-                        width="80"
-                        height="80"
-                    />
-                    <p class="cs-item-p">
-                        "Zero security issues in 2 years - unlike our old
-                        WordPress site that was hacked twice. The performance is
-                        incredible and our automation handles 90% of our booking
-                        processes automatically."
-                    </p>
-                    <span class="cs-reviewer">
-                        Michael Chen
-                        <span class="cs-desc">Owner, Peak Performance Gym</span>
-                    </span>
-                    <img
-                        class="cs-item-stars"
-                        aria-hidden="true"
-                        loading="lazy"
-                        decoding="async"
-                        src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
-                        alt="stars"
-                        width="96"
-                        height="16"
-                    />
-                </li>
-            </ul>
-            <a href="/reviews" class="cs-button-solid">Our Reviews</a>
-        </div>
-    </section>
+    <Services />
+    <PageRanking />
+    <ValueProp />
+    <Offerings />
+    <Pricing />
 
     <CTA />
 </BaseLayout>
 
 <style lang="scss">
-    /* STYLES FOR ABOVE THE FOLD */
-
     /*-- -------------------------- -->
 <---           Hero             -->
 <--- -------------------------- -*/
-
-    /* Mobile - 360px */
-    @media only screen and (min-width: 0em) {
-        #hero {
-            font-family: "Roboto", "Arial", sans-serif;
-            /* Centers button */
-            text-align: center;
-            /* changes on tablet */
-            padding: 0 calc(16 / 16 * 1rem);
-            padding-bottom: calc(100 / 16 * 1rem);
+    /* Mobile */
+    @media only screen and (min-width: 0rem) {
+        #hero-2436 {
+            min-height: 100vh;
+            padding: var(--sectionPadding);
+            padding-top: clamp(
+                calc(220 / 16 * 1rem),
+                45vw,
+                calc(475 / 16 * 1rem)
+            );
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
             position: relative;
             z-index: 1;
-            /* prevents overflow from the lines extending past the screen width */
-            overflow: hidden;
 
-            .cs-picture {
-                /* Background Image */
+            &:before {
+                content: "";
+                width: 100%;
+                height: 85%;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(3, 7, 17, 1) 0%,
+                    rgba(3, 7, 17, 0.35) 75%,
+                    rgba(3, 7, 17, 0) 100%
+                );
+                opacity: 1;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            &:after {
+                content: "";
+                width: 100%;
+                height: 35%;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(1, 1, 4, 0) 0%,
+                    rgba(1, 1, 4, 1) 100%
+                );
+                opacity: 1;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            .cs-container {
+                width: 100%;
+                max-width: calc(1280 / 16 * 1rem);
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: clamp(calc(48 / 16 * 1rem), 8vw, calc(128 / 16 * 1rem));
+
+                &:before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(
+                        to right,
+                        rgba(3, 7, 17, 0.64) 0%,
+                        rgba(3, 7, 17, 0.64) 18%,
+                        rgba(3, 7, 17, 0.51) 25%,
+                        rgba(3, 7, 17, 0.32) 35%,
+                        rgba(3, 7, 17, 0.32) 60%,
+                        rgba(3, 7, 17, 0.64) 78%,
+                        rgba(3, 7, 17, 0.64) 80%,
+                        rgba(3, 7, 17, 0.64) 100%
+                    );
+                    opacity: 1;
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    z-index: -1;
+                }
+            }
+
+            .cs-content {
+                text-align: center;
+                width: 100%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: calc(16 / 16 * 1rem);
+                column-gap: clamp(
+                    calc(64 / 16 * 1rem),
+                    10vw,
+                    calc(100 / 16 * 1rem)
+                );
+            }
+
+            .cs-flex {
+                text-align: inherit;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cs-flex2 {
+                max-width: calc(540 / 16 * 1rem);
+            }
+
+            .cs-topper {
+                color: var(--primary);
+            }
+
+            .cs-title {
+                font-size: clamp(
+                    calc(39 / 16 * 1rem),
+                    6vw,
+                    calc(61 / 16 * 1rem)
+                );
+                margin-bottom: 0;
+                max-width: 15ch;
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-text {
+                font-size: clamp(
+                    calc(16 / 16 * 1rem),
+                    2vw,
+                    calc(20 / 16 * 1rem)
+                );
+                color: var(--bodyTextColorWhite);
+                margin-bottom: calc(32 / 16 * 1rem);
+            }
+
+            .cs-button-solid {
+                font-size: calc(16 / 16 * 1rem);
+                font-weight: 700;
+                /* 46px - 56px */
+                line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+                text-align: center;
+                text-decoration: none;
+                min-width: calc(150 / 16 * 1rem);
+                margin: 0;
+                padding: 0 calc(24 / 16 * 1rem);
+                background-color: var(--primary);
+                color: var(--bodyTextColorWhite);
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+
+                &:before {
+                    content: "";
+                    width: 0%;
+                    height: 100%;
+                    background: #000;
+                    opacity: 1;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    transition: width 0.3s;
+                }
+
+                &:hover {
+                    &:before {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .cs-logo-feature {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .cs-background {
                 width: 100%;
                 height: 100%;
                 display: block;
                 position: absolute;
                 top: 0;
                 left: 0;
+                object-fit: cover;
                 z-index: -2;
 
-                &:before {
-                    /* Black Color Overlay */
-                    content: "";
-                    width: 100%;
-                    height: 100%;
-                    background: #000;
-                    opacity: 0.7;
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    z-index: 1;
-                    /* prevents the cursor from interacting with it */
-                    pointer-events: none;
-                }
-
                 img {
                     width: 100%;
                     height: 100%;
-                    /* Makes image act like a background-image */
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                     object-fit: cover;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
                 }
-            }
-
-            .cs-container {
-                width: 100%;
-                max-width: calc(1280 / 16 * 1em);
-                margin: auto;
-                /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
-                /* 144px - 280px - leaving extra space for the navigation */
-                /* changes on tablet */
-                padding: clamp(9em, 25.95vw, 17.5em) 0;
-                position: relative;
-
-                &:before {
-                    /* Left Line */
-                    content: "";
-                    width: 1px;
-                    height: 100%;
-                    background: -moz-linear-gradient(
-                        top,
-                        rgba(250, 251, 252, 0.5) 0%,
-                        rgba(250, 251, 252, 0) 100%
-                    ); /* FF3.6-15 */
-                    background: -webkit-linear-gradient(
-                        top,
-                        rgba(250, 251, 252, 0.5) 0%,
-                        rgba(250, 251, 252, 0) 100%
-                    ); /* Chrome10-25,Safari5.1-6 */
-                    opacity: 1;
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
-            }
-
-            .cs-flex-group {
-                width: 80vw;
-                /* 464px - 562px */
-                max-width: clamp(29em, 60vw, 35.125em);
-                margin: auto;
-                /* 60px - 220px */
-                margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
-                box-sizing: border-box;
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                flex-wrap: wrap;
-            }
-
-            .cs-topper {
-                text-align: center;
-                margin-bottom: calc(16 / 16 * 1rem);
-            }
-
-            .cs-title {
-                text-align: center;
-                width: 100%;
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-text {
-                text-align: center;
-                /* 32px - 40px */
-                margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
-                /* 40px - 48px */
-                margin-bottom: clamp(2.5rem, 4vw, 3rem);
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-caution {
-                background-color: var(--primary);
-                padding: calc(16 / 16 * 1rem) calc(24 / 16 * 1rem);
-                font-size: calc(20 / 16 * 1rem);
-            }
-
-            .cs-button-solid {
-                line-height: clamp(2.875em, 5.5vw, 3.5em);
-                height: initial;
-                margin-bottom: calc(16 / 16 * 1rem);
-            }
-
-            .cs-button-transparent {
-                font-size: calc(16 / 16 * 1rem);
-                font-weight: 700;
-                /* 46px - 56px */
-                line-height: clamp(2.875em, 5.5vw, 3.5em);
-                text-decoration: none;
-                width: calc(180 / 16 * 1rem);
-                /* 46px - 56px */
-                height: clamp(2.875em, 5.5vw, 3.5em);
-                margin: 0 calc(8 / 16 * 1rem);
-                box-sizing: border-box;
-                padding: 0;
-                color: #fff;
-                background-color: transparent;
-                border: 1px solid var(--bodyTextColorWhite);
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                z-index: 1;
-
-                &:before {
-                    content: "";
-                    background: #000;
-                    opacity: 1;
-                    display: block;
-                    position: absolute;
-                    /* so it sits on top of the border */
-                    top: -1px;
-                    right: -1px;
-                    bottom: -1px;
-                    left: -1px;
-                    z-index: -1;
-                    /* this is what creates the grow affect on hover */
-                    transform: scaleX(0);
-                    transition: transform 0.3s;
-                    transform-origin: left;
-                }
-
-                &:hover {
-                    &:before {
-                        transform: scaleX(1);
-                    }
-                }
-
-                .cs-img {
-                    margin-right: calc(12 / 16 * 1rem);
-                    display: block;
-                }
-            }
-        }
-    }
-
-    /* Tablet - 768px */
-    @media only screen and (min-width: 48em) {
-        #hero {
-            /* 32px - 40px */
-            padding: 0 clamp(2em, 5vw, 2.5em);
-
-            .cs-container {
-                padding: clamp(7em, 27.95vw, 17.5em) 0
-                    clamp(9em, 30.95vw, 23.5em) 0;
-                &:after {
-                    /* Right Line */
-                    content: "";
-                    width: 1px;
-                    height: 100%;
-                    background: -moz-linear-gradient(
-                        top,
-                        rgba(250, 251, 252, 0) 0%,
-                        rgba(250, 251, 252, 0.5) 100%
-                    ); /* FF3.6-15 */
-                    background: -webkit-linear-gradient(
-                        top,
-                        rgba(250, 251, 252, 0) 0%,
-                        rgba(250, 251, 252, 0.5) 100%
-                    ); /* Chrome10-25,Safari5.1-6 */
-                    opacity: 1;
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                }
-            }
-
-            .cs-button-solid {
-                margin-right: calc(20 / 16 * 1rem);
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    /* Desktop Parallax Effect - 1300px */
-    @media only screen and (min-width: 81.25em) {
-        // #hero {
-        //   background: url("/assets/images/hero.jpg");
-        //   background-position: center;
-        //   background-size: cover;
-        //   background-repeat: no-repeat;
-        //   /* creates parallax effect on background image */
-        //   background-attachment: fixed;
-        // }
-    }
-
-    /* Dark Mode */
-    @media only screen and (min-width: 0em) {
-        body.dark-mode {
-            #hero {
-                .cs-background {
-                    &:before {
-                        opacity: 0.8;
-                    }
-                }
-            }
-        }
-    }
-
-    /*-- -------------------------- -->
-<---          Services          -->
-<--- -------------------------- -*/
-
-    /* Mobile */
-    @media only screen and (min-width: 0em) {
-        .services {
-            width: 90%;
-            max-width: calc(1320 / 16 * 1em);
-            margin: auto;
-            margin-top: calc(-167em / 16);
-            margin-bottom: calc(50 / 16 * 1em);
-            padding: calc(50 / 16 * 1em) calc(20 / 16 * 1em);
-            background: #fff;
-            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
-            border-top: calc(6 / 16 * 1em) solid var(--primary);
-            border-radius: calc(5 / 16 * 1em);
-            position: relative;
-            z-index: 100;
-            .card {
-                width: 100%;
-                max-width: calc(357 / 16 * 1em);
-                margin: auto;
-                margin-bottom: calc(50 / 16 * 1em);
-                display: block;
-                &:last-of-type {
-                    margin-bottom: 0;
-                }
-
-                picture {
-                    width: calc(88 / 16 * 1em);
-                    height: calc(88 / 16 * 1em);
-                    margin: auto;
-                    margin-bottom: calc(23 / 16 * 1em);
-                    background: var(--primary);
-                    border-radius: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    img {
-                        width: calc(48 / 16 * 1em);
-                        height: calc(48 / 16 * 1em);
-                    }
-                }
-                h2 {
-                    font-size: calc(32 / 16 * 1em);
-                    font-weight: 700;
-                    line-height: 27/20em;
-                    text-align: center;
-                    margin-bottom: 13/20em;
-                    color: #1a1a1a;
-                }
-                p {
-                    line-height: 24/18em;
-                    text-align: center;
-                    width: 100%;
-                    opacity: 0.7;
-                }
-            }
-        }
-    }
-
-    /* Inbetween */
-    @media only screen and (min-width: 768px) {
-        .services {
-            font-size: min(1.8vw, 1em);
-            width: 98%;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-
-            .card {
-                max-width: calc(325 / 16 * 1em);
-                margin: 0;
-            }
-        }
-    }
-
-    /* Large Desktop */
-    @media only screen and (min-width: 1300px) {
-        .services {
-            padding: calc(50 / 16 * 1em) calc(80 / 16 * 1em);
-
-            .card {
-                max-width: calc(357 / 16 * 1em);
-            }
-        }
-    }
-
-    /* Dark mode */
-    @media only screen and (min-width: 0em) {
-        body.dark-mode {
-            #services {
-                background: var(--medium);
-
-                picture {
-                    background: var(--primaryDark);
-                }
-
-                h2 {
-                    font-weight: bold;
-                    color: #fff;
-                }
-            }
-        }
-    }
-
-    /* PAGE-SPECIFIC STYLES FOR THE HOME PAGE */
-
-    /*-- -------------------------- -->
-<---       Side By Side         -->
-<--- -------------------------- -*/
-
-    /* Mobile - 360px */
-    @media only screen and (min-width: 0em) {
-        #sbs {
-            padding: var(--sectionPadding);
-
-            .cs-container {
-                width: 100%;
-                max-width: calc(1280 / 16 * 1rem);
-                margin: auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                row-gap: calc(40 / 16 * 1rem);
-            }
-
-            .cs-left {
-                /* scaling the font size with the view width */
-                font-size: min(2.31vw, 0.7em);
-                /* using ems so we can use font size to scale the whole section */
-                width: calc(631 / 16 * 1em);
-                height: calc(636 / 16 * 1em);
-                position: relative;
-            }
-
-            .cs-picture {
-                border-radius: calc(24 / 16 * 1em);
-                display: block;
-                position: absolute;
-                /* clips img tag corners */
-                overflow: hidden;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    /* makes image act like a background image */
-                    object-fit: cover;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
-            }
-
-            .cs-picture1 {
-                width: calc(522 / 16 * 1em);
-                height: calc(581 / 16 * 1em);
-                top: 0;
-                left: 0;
-            }
-
-            .cs-picture2 {
-                width: calc(414 / 16 * 1em);
-                height: calc(400 / 16 * 1em);
-                background-color: #fff;
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
-                /* 6px - 12px */
-                border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
-                right: 0;
-                bottom: 0;
-            }
-
-            .cs-right {
-                max-width: calc(542 / 16 * 1rem);
-                margin: auto;
-            }
-
-            .cs-topper {
-                text-align: left;
-                margin-bottom: calc(4 / 16 * 1rem);
-            }
-
-            .cs-title {
-                text-align: left;
-                max-width: calc(800 / 16 * 1rem);
-            }
-
-            .cs-text {
-                text-align: left;
-                max-width: calc(750 / 16 * 1rem);
-                margin-bottom: calc(16 / 16 * 1rem);
-
-                &:last-of-type {
-                    margin-bottom: calc(32 / 16 * 1rem);
-                }
-            }
-
-            .cs-flex-group {
-                /* 16px - 32px */
-                padding: clamp(1rem, 3vw, 2rem);
-                background-color: #f7f7f7;
-                border-radius: calc(16 / 16 * 1rem);
-                position: relative;
-            }
-
-            .cs-flex-p {
-                /* 14px - 16px */
-                font-size: clamp(0.875rem, 1.5vw, 1rem);
-                line-height: 1.5em;
-                margin: 0 0 calc(16 / 16 * 1rem);
-                color: #353535;
-            }
-
-            .cs-name {
-                font-size: calc(16 / 16 * 1rem);
-                font-weight: bold;
-                line-height: 1.2em;
-                text-transform: uppercase;
-                margin: 0 0 calc(4 / 16 * 1rem);
-                color: var(--headerColor);
-                display: block;
-            }
-
-            .cs-job {
-                font-size: calc(14 / 16 * 1rem);
-                line-height: 1.5em;
-                color: #353535;
-                display: block;
-            }
-
-            .cs-quote-icon {
-                /* 60px - 136px */
-                width: clamp(3.75rem, 10vw, 8.5rem);
-                height: auto;
-                position: absolute;
-                /* 16px - 32px */
-                right: clamp(1rem, 4vw, 2rem);
-                bottom: calc(0 / 16 * 1rem);
-            }
-
-            .cs-button-solid {
-                margin-top: calc(32 / 16 * 1rem);
             }
         }
     }
 
     /* Desktop - 1024px */
-    @media only screen and (min-width: 64em) {
-        #sbs {
-            .cs-container {
-                flex-flow: row;
+    @media only screen and (min-width: 64rem) {
+        #hero-2436 {
+            .cs-content {
+                flex-direction: row;
                 justify-content: space-between;
-                gap: calc(52 / 16 * 1rem);
             }
 
-            .cs-left {
-                font-size: min(1.2vw, 1em);
-                flex: none;
-            }
-
-            .cs-right {
-                margin: 0;
-            }
-        }
-    }
-
-    /* Dark Mode */
-    @media only screen and (min-width: 0em) {
-        body.dark-mode {
-            #sbs {
-                .cs-left {
-                    &:before,
-                    &:after {
-                        background: var(--accent);
-                    }
-                }
-
-                .cs-picture2 {
-                    background-color: var(--dark);
-                    /* 6px - 12px */
-                    border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-                }
-
-                .cs-title,
-                .cs-text,
-                .cs-h3,
-                .cs-flex-p,
-                .cs-name {
-                    color: var(--bodyTextColorWhite);
-                }
-
-                .cs-flex-group {
-                    background-color: var(--grey);
-                }
-
-                .cs-job {
-                    color: var(--bodyTextColorWhite);
-                    opacity: 0.8;
-                }
-
-                .cs-quote-icon {
-                    opacity: 0.2;
-                }
-            }
-        }
-    }
-
-    /*-- -------------------------- -->
-<---       Side By Side         -->
-<--- -------------------------- -*/
-
-    /* Mobile - 360px */
-    @media only screen and (min-width: 0em) {
-        #sbs-r {
-            padding: var(--sectionPadding);
-
-            .cs-container {
-                width: 100%;
-                max-width: calc(1280 / 16 * 1rem);
-                margin: auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                row-gap: calc(40 / 16 * 1rem);
-            }
-
-            .cs-left {
-                /* scaling the font size with the view width */
-                font-size: min(2.31vw, 0.7em);
-                /* using ems so we can use font size to scale the whole section */
-                width: calc(631 / 16 * 1em);
-                height: calc(636 / 16 * 1em);
-                position: relative;
-            }
-
-            .cs-picture {
-                border-radius: calc(24 / 16 * 1em);
-                display: block;
-                position: absolute;
-                /* clips img tag corners */
-                overflow: hidden;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    /* makes image act like a background image */
-                    object-fit: cover;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
-            }
-
-            .cs-picture1 {
-                width: calc(522 / 16 * 1em);
-                height: calc(581 / 16 * 1em);
-                top: 0;
-                right: 0;
-            }
-
-            .cs-picture2 {
-                width: calc(414 / 16 * 1em);
-                height: calc(400 / 16 * 1em);
-                background-color: #fff;
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
-                /* 6px - 12px */
-                border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
-                bottom: 0;
-                left: 0;
-            }
-
-            .cs-right {
-                max-width: calc(542 / 16 * 1rem);
-                margin: auto;
-            }
-
-            .cs-topper {
+            .cs-flex {
                 text-align: left;
-                margin-bottom: calc(4 / 16 * 1rem);
-            }
-
-            .cs-title {
-                text-align: left;
-                max-width: calc(800 / 16 * 1rem);
-            }
-
-            .cs-text {
-                text-align: left;
-                max-width: calc(750 / 16 * 1rem);
-                margin-bottom: calc(16 / 16 * 1rem);
-                &:last-of-type {
-                    margin-bottom: calc(32 / 16 * 1rem);
-                }
-            }
-
-            .cs-flex-group {
-                /* 16px - 32px */
-                padding: clamp(1rem, 3vw, 2rem);
-                background-color: #f7f7f7;
-                border-radius: calc(16 / 16 * 1rem);
-                position: relative;
-            }
-
-            .cs-flex-p {
-                /* 14px - 16px */
-                font-size: clamp(0.875rem, 1.5vw, 1rem);
-                line-height: 1.5em;
-                margin: 0 0 calc(16 / 16 * 1rem);
-                color: #353535;
-            }
-
-            .cs-name {
-                font-size: calc(16 / 16 * 1rem);
-                font-weight: bold;
-                line-height: 1.2em;
-                text-transform: uppercase;
-                margin: 0 0 calc(4 / 16 * 1rem);
-                color: var(--headerColor);
-                display: block;
-            }
-
-            .cs-job {
-                font-size: calc(14 / 16 * 1rem);
-                line-height: 1.5em;
-                color: #353535;
-                display: block;
-            }
-
-            .cs-quote-icon {
-                /* 60px - 136px */
-                width: clamp(3.75rem, 10vw, 8.5rem);
-                height: auto;
-                position: absolute;
-                /* 16px - 32px */
-                right: clamp(1rem, 4vw, 2rem);
-                bottom: calc(0 / 16 * 1rem);
-            }
-        }
-    }
-
-    /* Desktop - 1024px */
-    @media only screen and (min-width: 64em) {
-        #sbs-r {
-            .cs-container {
-                flex-flow: row;
-                justify-content: space-between;
-                gap: calc(52 / 16 * 1rem);
-            }
-
-            .cs-left {
-                font-size: min(1.2vw, 1em);
-                /* sends it to the right */
-                order: 2;
-                flex: none;
-            }
-
-            .cs-right {
-                margin: 0;
-            }
-        }
-    }
-
-    /* Dark Mode */
-    @media only screen and (min-width: 0em) {
-        body.dark-mode {
-            #sbs-r {
-                .cs-left {
-                    &:before,
-                    &:after {
-                        background: var(--accent);
-                    }
-                }
-
-                .cs-picture2 {
-                    background-color: var(--dark);
-                    /* 6px - 12px */
-                    border: clamp(0.375em, 1.5vw, 0.75em) solid var(--dark);
-                }
-
-                .cs-title,
-                .cs-text,
-                .cs-h3,
-                .cs-flex-p,
-                .cs-name {
-                    color: var(--bodyTextColorWhite);
-                }
-
-                .cs-flex-group {
-                    background-color: var(--accent);
-                }
-
-                .cs-job {
-                    color: var(--bodyTextColorWhite);
-                    opacity: 0.8;
-                }
-
-                .cs-quote-icon {
-                    opacity: 0.2;
-                }
-            }
-        }
-    }
-
-    /*-- -------------------------- -->
-<---          Gallery           -->
-<--- -------------------------- -*/
-
-    /* Mobile - 360px - Contains hover animation */
-    @media only screen and (min-width: 0em) {
-        #gallery {
-            /* Centers button */
-            text-align: center;
-            padding: var(--sectionPadding);
-            position: relative;
-            /* Prevents overflow from the image going off screen */
-            overflow: hidden;
-            .cs-container {
-                width: 100%;
-                max-width: calc(1322 / 16 * 1em);
-                margin: auto;
-            }
-
-            .cs-topper {
-                text-align: center;
-                margin-bottom: calc(16 / 16 * 1rem);
-            }
-
-            .cs-title {
-                text-align: center;
-                max-width: calc(621 / 16 * 1rem);
-                margin-bottom: calc(40 / 16 * 1rem);
-            }
-
-            .cs-image-group {
-                /* used rem so it doesn't scale with the font size of on parent */
-                font-size: min(1.1vw, 1em);
-                width: 100%;
-                max-width: calc(1322 / 16 * 1em);
-                margin: 0 auto calc(60 / 16 * 1rem);
-                padding: 0;
-                display: flex;
-                justify-content: center;
                 align-items: flex-start;
-                gap: calc(30 / 16 * 1em);
             }
 
-            .cs-row {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                gap: calc(30 / 16 * 1em);
-            }
-
-            .cs-picture {
-                display: block;
-                position: relative;
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
-            }
-
-            .cs-row-1 {
-                .cs-picture1 {
-                    width: calc(420 / 16 * 1em);
-                    height: calc(567 / 16 * 1em);
-                }
-
-                .cs-picture2 {
-                    width: calc(420 / 16 * 1em);
-                    height: calc(629 / 16 * 1em);
-                }
-
-                .cs-picture3 {
-                    width: calc(420 / 16 * 1em);
-                    height: calc(512 / 16 * 1em);
-                }
-            }
-
-            .cs-row-2 {
-                .cs-picture1 {
-                    width: calc(420 / 16 * 1em);
-                    height: calc(492 / 16 * 1em);
-                }
-
-                .cs-picture2 {
-                    width: calc(420 / 16 * 1em);
-                    height: calc(517 / 16 * 1em);
-                }
-
-                .cs-picture3 {
-                    width: calc(420 / 16 * 1em);
-                    height: calc(629 / 16 * 1em);
-                }
-            }
-
-            .cs-row-3 {
-                .cs-picture1 {
-                    width: calc(420 / 16 * 1em);
-                    height: calc(625 / 16 * 1em);
-                }
-
-                .cs-picture2 {
-                    width: calc(420 / 16 * 1em);
-                    height: calc(452 / 16 * 1em);
-                }
-
-                .cs-picture3 {
-                    width: calc(420 / 16 * 1em);
-                    height: calc(629 / 16 * 1em);
-                }
-            }
-        }
-    }
-
-    /* Dark mode */
-    @media only screen and (min-width: 0em) {
-        body.dark-mode {
-            #gallery {
-                .cs-title {
-                    color: var(--bodyTextColorWhite);
-                }
-            }
-        }
-    }
-
-    /*-- -------------------------- -->
-<---          Reviews           -->
-<--- -------------------------- -*/
-
-    /* Mobile - 360px */
-    @media only screen and (min-width: 0em) {
-        #reviews {
-            /* Centers the button */
-            text-align: center;
-            padding: var(--sectionPadding);
-
-            .cs-container {
-                width: 100%;
-                max-width: calc(1104 / 16 * 1rem);
-                margin: auto;
-            }
-
-            .cs-topper {
-                text-align: center;
-                margin-bottom: calc(16 / 16 * 1rem);
-            }
-
-            .cs-title {
-                text-align: center;
-                max-width: calc(700 / 16 * 1rem);
-            }
-
-            .cs-text {
-                text-align: center;
-                max-width: calc(650 / 16 * 1rem);
-                /* 88px - 104px */
-                margin-bottom: clamp(5.5em, 10.2vw, 6.5em);
-            }
-
-            .cs-card-group {
-                /* 48px - 64px */
-                margin: 0 auto clamp(3rem, 5vw, 4rem);
-                padding: 0;
-            }
-
-            .cs-item {
-                text-align: left;
-                list-style: none;
-                width: 100%;
-                max-width: calc(542 / 16 * 1rem);
-                margin: 0 auto calc(64 / 16 * 1rem);
-                /* Prevents padding from affecting height & width */
-                box-sizing: border-box;
-                /* Padding L & R - 16px - 32px */
-                padding: calc(60 / 16 * 1rem) clamp(1rem, 3.2vw, 2rem) 0;
-                /* 32px - 40px */
-                padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
-                background: #fff;
-                box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
-                border-radius: calc(4 / 16 * 1rem);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-                position: relative;
-
-                &:last-of-type {
-                    margin-bottom: 0;
-                }
-            }
-
-            .cs-item-img {
-                width: calc(80 / 16 * 1rem);
-                height: calc(80 / 16 * 1rem);
-                position: absolute;
-                top: calc(-40rem / 16);
-            }
-
-            .cs-item-p {
-                font-size: calc(16 / 16 * 1rem);
-                line-height: 1.5em;
-                margin: 0 0 calc(20 / 16 * 1rem);
-                padding-bottom: calc(20 / 16 * 1rem);
-                color: var(--bodyTextColor);
-                border-bottom: 1px solid #e8e9ec;
-            }
-
-            .cs-reviewer {
-                font-size: calc(16 / 16 * 1rem);
-                font-weight: 700;
-                line-height: 1.5em;
-                width: 40%;
-                margin: 0 auto 0 0;
-                color: var(--headerColor);
-                display: block;
-            }
-
-            .cs-desc {
-                font-size: calc(14 / 16 * 1rem);
-                font-weight: 400;
-                display: block;
-            }
-
-            .cs-item-stars {
-                width: calc(96 / 16 * 1rem);
-                height: calc(16 / 16 * 1rem);
-            }
-        }
-    }
-
-    /* Tablet - 768px */
-    @media only screen and (min-width: 48em) {
-        #reviews {
-            .cs-card-group {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: calc(16 / 16 * 1rem);
-            }
-
-            .cs-item {
-                /* reset margin so it won't interfere with flexbox */
-                margin: 0;
-            }
-        }
-    }
-
-    /* Dark Mode */
-    @media only screen and (min-width: 0em) {
-        body.dark-mode {
-            #reviews {
-                .cs-text,
-                .cs-item-p,
-                .cs-reviewer {
-                    color: var(--bodyTextColorWhite);
-                }
-
-                .cs-item {
-                    background: var(--medium);
-                }
+            .cs-flex2 {
+                max-width: calc(417 / 16 * 1rem);
             }
         }
     }

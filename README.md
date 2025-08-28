@@ -1,7 +1,7 @@
   <h3 align="center">Advanced Astro v4 - i18n</h3>
 
   <p align="center">
-    This Astro advanced kit includes a pre-configured multi-language setup, along with five pages filled with CodeStitch components. Everything is ready to go right from the start, offering a fantastic introduction to the advantages of a Static Site Generator, complete with LESS preprocessing and a blog powered by Astro’s content collections. 
+    This Astro advanced kit includes a pre-configured multi-language setup, along with five pages filled with CodeStitch components. Everything is ready to go right from the start, offering a fantastic introduction to the advantages of a Static Site Generator, complete with LESS preprocessing and a blog powered by Astro's content collections. 
     <br/>
     <br/>
     <a href="https://advanced-astro-kit-i18n.netlify.app/" target="_blank">View Live Result</a>
@@ -186,7 +186,7 @@ Created after running `npm build`. This will hold the final build of your site.
 
 #### `public/*`
 
-The `public/` directory is for files and assets in your project that do not need to be processed during Astro’s build process. The files in this folder will be copied into the build folder untouched, and then your site will be built.
+The `public/` directory is for files and assets in your project that do not need to be processed during Astro's build process. The files in this folder will be copied into the build folder untouched, and then your site will be built.
 
 - \_redirects - To configure redirects. Read more on <a href="https://docs.netlify.com/routing/redirects/">Netlify</a>
 - content/ - Data to render pages from, such as the blog.
@@ -275,7 +275,7 @@ The project's manifest. Standard NodeJS package files, containing the dependenci
 
 #### `tsconfig.json`
 
-A TypeScript configuration file. Optional. Includes TypeScript configuration options for your Astro project. Some features (like npm package imports) aren’t fully supported in the editor without a tsconfig.json file.
+A TypeScript configuration file. Optional. Includes TypeScript configuration options for your Astro project. Some features (like npm package imports) aren't fully supported in the editor without a tsconfig.json file.
 
 This kit is configured to have the `strictest` TS config, which you can modify of course. The `paths` config object comes handy to create import shortcuts.
 

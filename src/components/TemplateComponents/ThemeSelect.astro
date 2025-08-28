@@ -49,14 +49,14 @@ import Select from "@components/TemplateComponents/Select.astro";
             ? theme
             : "auto";
 
-    /** Load the user’s preference from `localStorage`. */
+    /** Load the user's preference from `localStorage`. */
     const loadTheme = (): Theme =>
         parseTheme(
             typeof localStorage !== "undefined" &&
                 localStorage.getItem(storageKey),
         );
 
-    /** Store the user’s preference in `localStorage`. */
+    /** Store the user's preference in `localStorage`. */
     function storeTheme(theme: Theme): void {
         if (typeof localStorage !== "undefined") {
             localStorage.setItem(

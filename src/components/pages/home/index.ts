@@ -1,0 +1,9 @@
+export { default as Gallery } from "./Gallery.astro";
+export { default as Services } from "./Services.astro";
+export { default as Reviews } from "./Reviews.astro";
+export { default as ValueProp } from "./ValueProp.astro";
+export { default as ValueProp1 } from "./ValueProp1.astro";
+export { default as ValueProp2 } from "./ValueProp2.astro";
+export { default as Offerings } from "./Offerings.astro";
+export { default as Pricing } from "./Pricing.astro";
+export { default as PageRanking } from "./PageRanking.astro";
