@@ -1,0 +1,26 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24.5.0"
+
+[[plugins]]
+    # Installs the Lighthouse Build Plugin for all deploy contexts
+    package = "@netlify/plugin-lighthouse"
+
+[[headers]]
+    for = "/*"
+    [headers.values]
+        Content-Security-Policy = "default-src 'self'; base-uri 'none'; img-src 'self' i.ytimg.com masjid-samiya-backen.pockethost.io; media-src 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src timing.athanplus.com www.youtube-nocookie.com;"
+        Referrer-Policy = "same-origin"
+        Strict-Transport-Security = "max-age=15768000"
+        X-Content-Type-Options = "nosniff"
+        X-Frame-Options = "DENY"
+        X-XSS-Protection = "1; mode=block"
+
+[functions]
+  # Directory with serverless functions, including background
+  # functions, to deploy. This is an absolute path relative to the 
+  # base directory, which is the root by default (/).
+  directory = "src/netlify/functions/"
