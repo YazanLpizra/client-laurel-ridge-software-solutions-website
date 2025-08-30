@@ -1,49 +1,45 @@
 ---
 // Import the component and all the images you want to use with it
-import CSPicture from "@components/TemplateComponents/CSPicture.astro";
-import mobileImage from "@assets/images/CTA/construction-m.jpg";
-import desktopImage from "@assets/images/CTA/cabinets2.jpg";
-import fallbackImage from "@assets/images/CTA/cabinets2.jpg";
+import heroVideo from "@assets/hero-video.mp4";
 ---
 
-<section id="cta">
-    <div class="container">
-        <h2 class="title">
-            Ready to Outrank
-            <br />
-            Your Competition?
-        </h2>
-        <p>
-            Discover why hand-coded websites consistently outperform WordPress
-            in speed, security, and Google rankings. Schedule your free consultation
-            and see how enterprise-grade development transforms your business.
+<section id="cta-80">
+    <video class="cs-background" autoplay muted loop playsinline>
+        <source src={heroVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+    <div class="cs-container">
+        <!-- <div class="cs-content"> -->
+        <div class="cs-topper">Let's Build Something Great</div>
+        <h2 class="cs-title">Ready To Transform Your Business?</h2>
+        <p class="cs-text">
+            With 10 years of enterprise software development experience, we
+            specialize in custom websites, automations, and cloud infrastructure
+            for small and medium businesses. Let's discuss how we can help
+            optimize your digital presence and streamline your operations.
         </p>
-        <a href="/contact" class="cs-button-solid">Free Performance Analysis</a>
+        <a
+            class="cs-button-solid"
+            aria-label="contact laurel ridge software solutions"
+            href="/contact">Get Your Free Consultation</a
+        >
     </div>
-    <CSPicture
-        mobileImgUrl={mobileImage}
-        mobileMediaWidth="600px"
-        desktopImgUrl={desktopImage}
-        desktopMediaWidth="601px"
-        fallbackImgUrl={fallbackImage}
-        alt=""
-    />
 </section>
 
-<!-- Don't forget to place the picture styles over into the CSPicture component -->
 <style lang="scss">
-    /* Mobile */
-    @media only screen and (min-width: 0em) {
-        #cta {
-            padding: calc(50 / 16 * 1rem) 0;
+    /* Mobile - 360px */
+    @media only screen and (min-width: 0rem) {
+        #cta-80 {
+            padding: var(--sectionPadding);
             position: relative;
+            z-index: 1;
 
             &:before {
                 content: "";
                 width: 100%;
                 height: 100%;
-                background: #000;
-                opacity: 0.7;
+                background: rgba(0, 0, 0, 0.6);
+                opacity: 1;
                 display: block;
                 position: absolute;
                 top: 0;
@@ -51,78 +47,163 @@ import fallbackImage from "@assets/images/CTA/cabinets2.jpg";
                 z-index: -1;
             }
 
-            .container {
-                text-align: center;
-            }
-
-            .title {
-                font-size: min(9vw, 3rem);
-                font-weight: 900;
-                line-height: 58/48;
-                text-align: center;
-                margin-bottom: calc(36 / 16 * 1rem);
-                color: #fff;
-                position: relative;
-            }
-
-            p {
-                text-align: center;
-                width: 96%;
-                max-width: calc(598 / 16 * 1rem);
-                margin: auto;
-                margin-bottom: calc(36 / 16 * 1rem);
-                color: #fff;
-                opacity: 1;
-            }
-        }
-    }
-
-    /* Small Desktop */
-    @media only screen and (min-width: 64em) {
-        #cta {
-            padding: calc(168 / 16 * 1rem) 0;
-        }
-    }
-
-    /* Large Desktop */
-    @media only screen and (min-width: 1300px) {
-        #cta {
-            margin-top: calc(100 / 16 * 1rem);
-            position: relative;
-            &:before {
-                display: none;
-            }
-            &:after {
-                content: "";
-                width: calc(2000 / 16 * 1rem);
-                height: calc(1108 / 16 * 1rem);
-                background: url("/assets/svgs/cta-squares.svg");
-                background-position: center;
-                background-size: contain;
-                background-repeat: no-repeat;
-                opacity: 1;
-                display: block;
+            .cs-background {
                 position: absolute;
-                bottom: 0;
-                left: 50%;
-                z-index: -3;
-                transform: translateX(-50%);
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -2;
             }
-            .container {
-                width: 90.0625%;
-                margin: auto;
-            }
-        }
-    }
 
-    /* Dark Mode */
-    @media only screen and (min-width: 0em) {
-        body.dark-mode {
-            #cta {
-                &:after {
-                    display: none;
+            .cs-container {
+                width: 100%;
+                height: 100%;
+                max-width: calc(1280 / 16 * 1rem);
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                /* 48px - 64px */
+                gap: clamp(3rem, 6vw, 4rem);
+            }
+
+            .cs-content {
+                /* set text align to left or center if content needs to be aligned */
+                text-align: center;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                /* aligns the content */
+                align-items: center;
+            }
+
+            .cs-title {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-text {
+                color: var(--bodyTextColorWhite);
+                margin-bottom: calc(32 / 16 * 1rem);
+                opacity: 0.8;
+            }
+
+            .cs-button-solid {
+                font-size: calc(16 / 16 * 1rem);
+                /* 46px - 56px */
+                line-height: clamp(2.875em, 5.5vw, 3.5em);
+                text-decoration: none;
+                font-weight: 700;
+                text-align: center;
+                margin: 0;
+                color: #fff;
+                min-width: calc(150 / 16 * 1rem);
+                padding: 0 calc(24 / 16 * 1rem);
+                background-color: var(--primary);
+                border-radius: calc(4 / 16 * 1rem);
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+                /* prevents padding from adding to the width */
+                box-sizing: border-box;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 0%;
+                    background: #000;
+                    opacity: 1;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    border-radius: calc(4 / 16 * 1rem);
+                    transition: width 0.3s;
+                }
+
+                &:hover {
+                    &:before {
+                        width: 100%;
+                    }
                 }
             }
+
+            .cs-picture {
+                width: 100%;
+                max-width: calc(457 / 16 * 1rem);
+                margin: auto;
+                position: relative;
+                display: block;
+                /* moves it to the 1st position at the top */
+                order: -1;
+                aspect-ratio: 300/475;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    border-radius: calc(8 / 16 * 1rem) calc(8 / 16 * 1rem) 0 0;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    /* Tablet - 768px */
+    @media only screen and (min-width: 48rem) {
+        #cta-80 {
+            text-align: left;
+            /* 144px - 225px - creates the white space above */
+            margin-top: clamp(9rem, 9.9vw, 14.0625rem);
+            padding-bottom: 0;
+            position: relative;
+            z-index: 1;
+
+            .cs-container {
+                // display: flex;
+                // justify-content: space-between;
+                // align-items: flex-start;
+                // position: relative;
+                padding-bottom: 1rem;
+            }
+
+            .cs-content {
+                text-align: left;
+                width: 50%;
+                max-width: calc(630 / 16 * 1rem);
+                margin: 0;
+                /* 60px - 100px - this gives us the space on the bottom without padding  */
+                margin-bottom: clamp(3.75rem, 6.2vw, 6.25rem);
+                align-items: flex-start;
+            }
+
+            .cs-picture {
+                width: 41vw;
+                max-width: calc(457 / 16 * 1rem);
+                /* height is a percentage of parent container height. When the cs-content height changes from extra text, the height of the image adjusts. Since the container is now longer/shorter, 150% of that height with also be longer/shorter */
+                height: clamp(145%, 44vw, 160%);
+                /* 500px - 578px */
+                max-height: clamp(31.25rem, 44vw, 36.125rem);
+                margin: 0;
+                /* position absolute so we can have the cs-content centered inside the black section and have it respond to different heights of the cs-content */
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                /* reset */
+                aspect-ratio: none;
+            }
+        }
+    }
+
+    /* Small Desktop - 1024px */
+    @media only screen and (min-width: 64rem) {
+        #cta-80 {
+            /* 144px - 200px */
+            margin-top: clamp(9rem, 12.9vw, 12.5rem);
         }
     }
 </style>

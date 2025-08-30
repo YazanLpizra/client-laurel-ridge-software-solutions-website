@@ -5,16 +5,16 @@ import { getOptimizedImage } from "@utils/utils";
 import {
     Offerings,
     Pricing,
-    Services,
+    WhatWeDo,
     ValueProp,
     PageRanking,
 } from "@components/pages/home";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Hero (for rendering)
-import landingImage from "@assets/images/hero.webp"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-import mobileLandingImage from "@assets/images/hero-m.webp"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+// import landingImage from "@assets/images/hero.webp"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import mobileLandingImage from "@assets/images/pages/home/hero-m.webp"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import heroVideo from "@assets/hero-video.mp4";
-const optimizedLandingImage = await getOptimizedImage(landingImage);
+// const optimizedLandingImage = await getOptimizedImage(landingImage);
 const optimizedMobileLandingImage = await getOptimizedImage(mobileLandingImage);
 ---
 
@@ -43,7 +43,7 @@ const optimizedMobileLandingImage = await getOptimizedImage(mobileLandingImage);
                         Transform operations with automation that saves 80% of
                         manual work.
                     </p>
-                    <a href="" class="cs-button-solid">Book A Call</a>
+                    <a href="" class="cs-button-solid">Schedule A Call</a>
                 </div>
             </div>
             <!-- Logo will be added when available -->
@@ -54,7 +54,7 @@ const optimizedMobileLandingImage = await getOptimizedImage(mobileLandingImage);
         </video>
     </section>
 
-    <Services />
+    <WhatWeDo />
     <PageRanking />
     <ValueProp />
     <Offerings />
@@ -176,10 +176,6 @@ const optimizedMobileLandingImage = await getOptimizedImage(mobileLandingImage);
 
             .cs-flex2 {
                 max-width: calc(540 / 16 * 1rem);
-            }
-
-            .cs-topper {
-                color: var(--primary);
             }
 
             .cs-title {

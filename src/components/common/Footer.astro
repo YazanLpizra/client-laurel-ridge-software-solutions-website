@@ -4,12 +4,8 @@ import { navData } from "@data/navData";
 import { getCurrentYear } from "@utils/utils";
 
 const currentYear = getCurrentYear();
-const companyName = "Laurel Ridge Software Solutions LLC";
 ---
 
-<!-- ============================================ 
-                Footer                     
-============================================ -->
 <footer id="footer">
     <div class="container">
         <section class="left-section">
@@ -50,22 +46,14 @@ const companyName = "Laurel Ridge Software Solutions LLC";
                     {
                         navData
                             .find((item) => item.name === "Services")!
-                            .children.map(({ name }) => <li>{name}</li>)
+                            .children?.map(({ name }) => <li>{name}</li>)
                     }
                 </ul>
                 <ul>
                     <li>
                         <h2>Contact</h2>
                     </li>
-                    <li>
-                        <a href="/contact">
-                            {client.address.lineOne}<br />
-                            {client.address.lineTwo}<br />
-                            {client.address.city}
-                            {client.address.state}
-                            {client.address.zip}
-                        </a>
-                    </li>
+                    <li>United States</li>
                     <li>
                         <a href={`tel:${client.phoneForTel}`}>
                             T:
@@ -82,7 +70,7 @@ const companyName = "Laurel Ridge Software Solutions LLC";
 
     <section class="credit">
         <span>Designed and Hand Coded by </span>
-        <a href="/" target="_blank" rel="noopener">{companyName}</a>
+        <a href="/" target="_blank" rel="noopener">{client.name}</a>
         <span class="copyright"> Copyright {currentYear}</span>
     </section>
 </footer>

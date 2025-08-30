@@ -84,18 +84,7 @@ const isLandingPage = Astro.url.pathname === "/";
         About Page - About us | Painters and Co.
         -->
         <title>
-            {
-                isLandingPage
-                    ? `${title}
-            |
-            ${client.name}
-            |
-            ${client.address.city},
-            ${client.address.state}`
-                    : `${title}
-                |
-                ${client.name}`
-            }
+            {`${title} | ${client.name} | ${client.address.state}`}
         </title>
 
         <!-- Dark / Light mode component -->

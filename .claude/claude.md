@@ -1,5 +1,5 @@
 ## About the website
-This is a website for a software consultancy called Laurel Ridge Software Solutions LLC. We are a small team specializing in websites for small and medium sized businesses as well as custom automations, scripts, integrations, and cloud infrastructure. We have 10 years of experience in enterprise web application development and AWS cloud infrastructure. 
+This is a website for a software consultancy called Laurel Ridge Software Solutions LLC. We are a small team specializing in websites for small and medium sized businesses as well as custom process automations, custom tooling, tool integrations, and cloud infrastructure. We have 10 years of experience in enterprise web application development and AWS cloud infrastructure. 
 
 ## Tech Stack
 * HTML

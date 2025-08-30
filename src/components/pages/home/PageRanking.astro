@@ -1,73 +1,69 @@
-<!-- ============================================ --><!--                      Stats                   --><!-- ============================================ -->
+---
+import pagerank100Mobile from "@assets/images/pages/home/lighthouse-pagerank-100-m.webp";
+import pagerank100Desktop from "@assets/images/pages/home/lighthouse-pagerank-100.webp";
+---
 <section id="stats-2428">
     <div class="cs-container">
         <div class="cs-wrapper">
             <div class="cs-content">
-                <span class="cs-topper">What The Numbers Say</span>
+                <span class="cs-topper">Performance That Speaks</span>
                 <h2 class="cs-title">
-                    Not Just a Studio, A Space for Transformation
+                    Perfect Scores, Every Time
                 </h2>
                 <p class="cs-text">
-                    Our space is intimate, immersive, and designed for focused
-                    artistic collaboration. Whether you’re preparing for a
-                    photoshoot, festival, performance, or simply want to express
-                    yourself in a new way, our team delivers glowing,
-                    high-impact body designs that tell a story — your story.
+                    Our hand-coded websites consistently achieve perfect Google PageSpeed scores
+                    and top-tier performance metrics. No WordPress bloat, no template limitations -
+                    just clean, optimized code that loads instantly and ranks higher.
                 </p>
                 <p class="cs-text">
-                    We also share our process with others through body art
-                    workshops and creative mentorship.
+                    Every website we build is crafted to outperform the competition and
+                    deliver exceptional user experiences that convert visitors into customers.
                 </p>
             </div>
             <picture class="cs-picture">
-                <!--Mobile Image-->
                 <source
                     media="(max-width: 600px)"
-                    srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tatoo7b.png"
+                    srcset={pagerank100Mobile.src}
                 />
-                <!--Tablet and above Image-->
                 <source
-                    media="(max-width: 1023px)"
-                    srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tatoo7b.png"
-                />
-                <!--Desktop and above Image-->
-                <source
-                    media="(min-width: 1024px)"
-                    srcset="https://nyc3.digitaloceanspaces.com/csimages2/Images/People/tattoo7.png"
+                    media="(max-width: 601px)"
+                    srcset={pagerank100Desktop.src}
                 />
                 <img
                     loading="lazy"
                     decoding="async"
-                    src="https://nyc3.digitaloceanspaces.com/csimages2/Images/People/tattoo7.png"
-                    alt="person with tattoo"
-                    width="608"
-                    height="862"
+                    src={pagerank100Desktop.src}
+                    alt="Google PageSpeed 100 score"
+                    width="569"
+                    height="842"
                 />
             </picture>
         </div>
         <ul class="cs-card-group">
             <li class="cs-item">
-                <span class="cs-number">10K+</span>
-                <h3 class="cs-h3">Body Art Sessions Completed</h3>
+                        <span class="cs-number">53%</span>
+                <h3 class="cs-h3">Percentage of abandoned visits if website takes over 3 seconds to load</h3>
                 <p class="cs-item-text">
-                    From UV painting to spiritual art, our artists transform
-                    clients into masterpieces in Portland and beyond.
+                    Perfect performance scores across all metrics - speed, accessibility,
+                    best practices, and SEO. 100/100 PageRank scores. Your website loads as fast as technically possible. Guaranteed.
+                    <br />
+                    <a href="https://speedy.site/website-load-time/" target="_blank" rel="noopener noreferrer">Source</a>
                 </p>
             </li>
             <li class="cs-item">
-                <span class="cs-number">1.2M+</span>
-                <h3 class="cs-h3">Social Media Views</h3>
+                <span class="cs-number">80%</span>
+                <h3 class="cs-h3">Time Savings on Manual Tasks</h3>
                 <p class="cs-item-text">
-                    Our creations shine on Instagram and TikTok, building a
-                    vibrant community of body art lovers.
+                    Our business automation solutions eliminate repetitive work,
+                    letting you focus on growing your business instead of managing it.
                 </p>
             </li>
             <li class="cs-item">
-                <span class="cs-number">22 Years</span>
-                <h3 class="cs-h3">Combined Artistic Experience</h3>
+                <span class="cs-number">10+ Years</span>
+                <h3 class="cs-h3">Enterprise Development Experience</h3>
                 <p class="cs-item-text">
-                    With years of ing experience, our team infuses creativity
-                    into every body we paint.
+                    Proven track record building mission-critical applications
+                    for Fortune 500 companies, now serving small and medium businesses.
                 </p>
             </li>
         </ul>
@@ -98,6 +94,7 @@
                 align-items: center;
                 /* 48px - 128px */
                 gap: clamp(3rem, 7vw, 8rem);
+                padding: 1rem;
             }
 
             .cs-wrapper {
@@ -114,10 +111,6 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-            }
-
-            .cs-topper {
-                color: var(--secondary);
             }
 
             .cs-title,
@@ -153,8 +146,8 @@
                 text-align: left;
                 list-style: none;
                 margin: 0;
-                /* 20px - 60px top & bottom, 16px - 48px left & right */
-                padding: clamp(1.25rem, 4.5vw, 3.75rem) clamp(1rem, 3.5vw, 3rem);
+                /* 10px - 30px top & bottom, 8px - 24px left & right */
+                padding: clamp(0.625rem, 2.25vw, 1.875rem) clamp(0.5rem, 1.75vw, 1.5rem);
                 background-color: #030711;
                 overflow: hidden;
                 display: flex;
@@ -201,11 +194,15 @@
                 order: 2;
                 position: relative;
                 z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 img {
-                    width: 100%;
+                    max-width: 100%;
                     height: auto;
                     display: block;
+                    object-fit: contain;
                 }
             }
         }
@@ -241,15 +238,17 @@
                 height: 100%;
                 max-height: none;
                 margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 img {
+                    max-width: 100%;
+                    max-height: 100%;
                     width: auto;
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    /* remove the right:0 and uncomment the left if you have a thinner image and want it oriented to the left more instead of on the right side of its parent container */
-                    /* left: 0; */
-                    right: 0;
+                    height: auto;
+                    object-fit: contain;
+                    position: static;
                 }
             }
         }
@@ -260,9 +259,9 @@
         #stats-2428 {
             .cs-picture {
                 img {
-                    right: 45%;
-                    /* offsetting any possible left value added in tablet, remove the right: 45% and left: auto if you dont need this stylingg */
-                    left: auto;
+                    // right: 45%;
+                    // /* offsetting any possible left value added in tablet, remove the right: 45% and left: auto if you dont need this stylingg */
+                    // left: auto;
                 }
             }
         }

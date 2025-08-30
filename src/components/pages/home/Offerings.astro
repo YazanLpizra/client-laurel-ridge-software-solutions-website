@@ -1,34 +1,70 @@
-<!-- ============================================ --><!--                Side By Side                  --><!-- ============================================ -->
+---
+import { websitePricingItems } from "@data/pricing";
+
+const monthlySubscriptionCost = websitePricingItems
+    .find(item => item.packageName === "Monthly")
+    ?.price;
+
+const backgroundPicture =
+    "https://nyc3.digitaloceanspaces.com/csimages2/Images/Illustrations/tattoo.jpg";
+const offerings = [
+    {
+        title: "Bulletproof Security",
+        text: "Our websites are static HTML and CSS code. No Wordpress, plugins, or external dependencies. There is literally nothing to hack.",
+    },
+    {
+        title: "Custom Designs",
+        text: "Our websites are coded by hand, ensuring complete flexibility in design and functionality.",
+    },
+    {
+        title: "Transparent Pricing",
+        text: "No hidden fees or surprise costs. You know exactly what you're paying for.",
+    },
+    {
+        title: "A+ Page Scores",
+        text: "With no bloat or unnecessary code, our websites achieve 95%+ page speed scores with Google.",
+    },
+    {
+        title: "Money Back Guarantee",
+        text: "If you're not satisfied with your website design, we'll refund your payment and cancel the contract—no questions asked. Your satisfaction is our priority.",
+    },
+    {
+        title: "Enterprise Grade Tooling",
+        text: "Our websites are built with the latest technologies and best practices based on 10 years of experience in the industry. We guarantee scalability, security, and performance.",
+    },
+];
+---
+
 <section id="sbs-2431">
     <div class="cs-container">
         <div class="cs-content-group">
             <div class="cs-content">
                 <div class="cs-flex-group">
-                    <span class="cs-topper">Featured Services</span>
-                    <h2 class="cs-title">Professional UV Body Painting</h2>
+                    <span class="cs-topper">What We Offer</span>
+                    <h2 class="cs-title">
+                        Websites starting at $0 down and {monthlySubscriptionCost} per month
+                    </h2>
                     <p class="cs-text">
-                        Experience vibrant art that transforms and illuminates
-                        when exposed to blacklight magic.
+                        Get started with $0 down for a standard 5-page small
+                        business website. For larger projects, custom pricing is
+                        available based on your specific needs, number of pages,
+                        and project scope. A 12-month minimum contract applies.
+                        All plans include design, development, hosting,
+                        unlimited edits, 24/7 support, and lifetime updates.
                     </p>
                 </div>
-                <a href="" class="cs-button-solid">Book Your Glow Session</a>
+                <a href="" class="cs-button-solid">Schedule A Call</a>
             </div>
             <!-- Background Image -->
             <picture class="cs-background">
                 <!--Mobile Image-->
-                <source
-                    media="(max-width: 600px)"
-                    srcset="https://nyc3.digitaloceanspaces.com/csimages2/Images/Illustrations/tattoo.jpg"
-                />
+                <source media="(max-width: 600px)" srcset={backgroundPicture} />
                 <!--Tablet and above Image-->
-                <source
-                    media="(min-width: 601px)"
-                    srcset="https://nyc3.digitaloceanspaces.com/csimages2/Images/Illustrations/tattoo.jpg"
-                />
+                <source media="(min-width: 601px)" srcset={backgroundPicture} />
                 <img
                     loading="lazy"
                     decoding="async"
-                    src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Illustrations/tattoo.jpg"
+                    src={backgroundPicture}
                     alt="appliance"
                     width="1280"
                     height="568"
@@ -36,133 +72,17 @@
             </picture>
         </div>
         <div class="cs-ul-wrapper">
-            <p class="cs-text">
-                Our custom UV body painting sessions combine glowing pigments,
-                intricate designs, and your unique vision to create
-                unforgettable looks. Perfect for festivals, performances,
-                creative shoots, or self-expression.
-            </p>
             <ul class="cs-card-group">
-                <li class="cs-item">
-                    <picture class="cs-icon-wrapper">
-                        <img
-                            class="cs-icon"
-                            loading="lazy"
-                            decoding="async"
-                            src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/red-paint.svg"
-                            alt="icon"
-                            width="32"
-                            height="32"
-                        />
-                        <div class="cs-border cs-border1" aria-hidden="true">
-                        </div>
-                        <div class="cs-border cs-border2" aria-hidden="true">
-                        </div>
-                    </picture>
-                    <div class="cs-flex">
-                        <h3 class="cs-h3">Custom Designs</h3>
-                        <p class="cs-item-text">
-                            One-of-a-kind blacklight-reactive art uniquely
-                            tailored to your body and style.
-                        </p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-icon-wrapper">
-                        <img
-                            class="cs-icon"
-                            loading="lazy"
-                            decoding="async"
-                            src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/red-paint.svg"
-                            alt="icon"
-                            width="32"
-                            height="32"
-                        />
-                        <div class="cs-border cs-border1" aria-hidden="true">
-                        </div>
-                        <div class="cs-border cs-border2" aria-hidden="true">
-                        </div>
-                    </picture>
-                    <div class="cs-flex">
-                        <h3 class="cs-h3">Custom Designs</h3>
-                        <p class="cs-item-text">
-                            One-of-a-kind blacklight-reactive art uniquely
-                            tailored to your body and style.
-                        </p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-icon-wrapper">
-                        <img
-                            class="cs-icon"
-                            loading="lazy"
-                            decoding="async"
-                            src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/red-face.svg"
-                            alt="icon"
-                            width="32"
-                            height="32"
-                        />
-                        <div class="cs-border cs-border1" aria-hidden="true">
-                        </div>
-                        <div class="cs-border cs-border2" aria-hidden="true">
-                        </div>
-                    </picture>
-                    <div class="cs-flex">
-                        <h3 class="cs-h3">Camera-Ready Looks</h3>
-                        <p class="cs-item-text">
-                            Designed specifically for portraits, events, and
-                            stunning visual content that captivates audiences.
-                        </p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-icon-wrapper">
-                        <img
-                            class="cs-icon"
-                            loading="lazy"
-                            decoding="async"
-                            src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/red-paint-cog.svg"
-                            alt="icon"
-                            width="32"
-                            height="32"
-                        />
-                        <div class="cs-border cs-border1" aria-hidden="true">
-                        </div>
-                        <div class="cs-border cs-border2" aria-hidden="true">
-                        </div>
-                    </picture>
-                    <div class="cs-flex">
-                        <h3 class="cs-h3">Signature Styles</h3>
-                        <p class="cs-item-text">
-                            Abstract, symbolic, tribal, and vibrant psychedelic
-                            body expressions await your creative touch.
-                        </p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-icon-wrapper">
-                        <img
-                            class="cs-icon"
-                            loading="lazy"
-                            decoding="async"
-                            src="https://nyc3.digitaloceanspaces.com/csimages2/Images/Icons/red-people.svg"
-                            alt="icon"
-                            width="32"
-                            height="32"
-                        />
-                        <div class="cs-border cs-border1" aria-hidden="true">
-                        </div>
-                        <div class="cs-border cs-border2" aria-hidden="true">
-                        </div>
-                    </picture>
-                    <div class="cs-flex">
-                        <h3 class="cs-h3">Collaborative Process</h3>
-                        <p class="cs-item-text">
-                            Work closely with your talented artist to bring your
-                            unique vision to life beautifully.
-                        </p>
-                    </div>
-                </li>
+                {
+                    offerings.map(({ text, title }) => (
+                        <li class="cs-item">
+                            <div class="cs-flex">
+                                <h3 class="cs-h3">{title}</h3>
+                                <p class="cs-item-text">{text}</p>
+                            </div>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
     </div>
@@ -285,10 +205,6 @@
                     position: relative;
                     z-index: 1;
                 }
-            }
-
-            .cs-topper {
-                color: var(--secondary);
             }
 
             .cs-title,
