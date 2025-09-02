@@ -1,12 +1,12 @@
 ---
 import { websitePricingItems } from "@data/pricing";
+import backgroundImgMobile from "@assets/images/pages/home/laptop-code-m.webp";
+import backgroundImgDesktop from "@assets/images/pages/home/laptop-code.webp";
 
-const monthlySubscriptionCost = websitePricingItems
-    .find(item => item.packageName === "Monthly")
-    ?.price;
+const monthlySubscriptionCost = websitePricingItems.find(
+    (item) => item.packageName === "Monthly",
+)?.price;
 
-const backgroundPicture =
-    "https://nyc3.digitaloceanspaces.com/csimages2/Images/Illustrations/tattoo.jpg";
 const offerings = [
     {
         title: "Bulletproof Security",
@@ -42,7 +42,9 @@ const offerings = [
                 <div class="cs-flex-group">
                     <span class="cs-topper">What We Offer</span>
                     <h2 class="cs-title">
-                        Websites starting at $0 down and {monthlySubscriptionCost} per month
+                        Websites starting at $0 down and {
+                            monthlySubscriptionCost
+                        } per month
                     </h2>
                     <p class="cs-text">
                         Get started with $0 down for a standard 5-page small
@@ -58,13 +60,19 @@ const offerings = [
             <!-- Background Image -->
             <picture class="cs-background">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset={backgroundPicture} />
+                <source
+                    media="(max-width: 600px)"
+                    srcset={backgroundImgMobile.src}
+                />
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset={backgroundPicture} />
+                <source
+                    media="(min-width: 601px)"
+                    srcset={backgroundImgDesktop.src}
+                />
                 <img
                     loading="lazy"
                     decoding="async"
-                    src={backgroundPicture}
+                    src={backgroundImgDesktop.src}
                     alt="appliance"
                     width="1280"
                     height="568"
